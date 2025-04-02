@@ -1,0 +1,15 @@
+0 silly argv {
+0 silly argv   _: [ 'run' ],
+0 silly argv   lernaVersion: '8.2.1',
+0 silly argv   '$0': 'node_modules\\lerna\\dist\\cli.js',
+0 silly argv   script: 'dev'
+0 silly argv }
+1 notice cli v8.2.1
+2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
+3 verbose rootPath C:\Users\Ernest\Documents\School Work\cs230_lab4
+4 error SyntaxError: C:\Users\Ernest\Documents\School Work\cs230_lab4\packages\backend\package.json: Expected double-quoted property name in JSON at position 113 (line 7 column 3)
+4 error     at JSON.parse (<anonymous>)
+4 error     at _readFile (C:\Users\Ernest\Documents\School Work\cs230_lab4\node_modules\jsonfile\index.js:25:16)
+4 error     at async Promise.all (index 1)
+4 error     at async createProjectGraphWithPackages (C:\Users\Ernest\Documents\School Work\cs230_lab4\node_modules\lerna\dist\index.js:2882:18)
+4 error     at async detectProjects (C:\Users\Ernest\Documents\School Work\cs230_lab4\node_modules\lerna\dist\index.js:3002:24)
