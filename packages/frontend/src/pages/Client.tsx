@@ -1,6 +1,24 @@
+import { useEffect, useState } from "react";
 import Table from "../components/Table";
+import axios from "axios";
 
 export default function Client() {
+
+    const [data, setData] = useState<any[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/clients');
+                console.log(response.data);
+                setData(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     const columns = [
         { head: '#', accessor: 'name' },
@@ -8,11 +26,6 @@ export default function Client() {
         { head: 'Phone Number', accessor: 'phone' },
         { head: 'Regularity', accessor: 'regularity' },
     ]
-    
-    const data = [
-        {name:'John', email:'john@gmail.com', phone:'1234567890', regularity:'Weekly'},
-        {name:'Mary', email:'mary@gmail.com', phone:'1234567890', regularity:'Monthly'},
-    ];
 
     const editColumn = (row: any, index: number) => {
         console.log('Edit clicked: ', row, ' : ', index);
